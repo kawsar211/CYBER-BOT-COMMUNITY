@@ -3,7 +3,7 @@ const axios = require("axios");
 
 module.exports.config = {
 
-  name: "sohana",
+  name: "shuva",
 
   version: "1.2.0",
 
@@ -22,7 +22,7 @@ module.exports.config = {
 };
 
 
-const API_URL = "https://cylinder-inspired-tokyo-ensures.trycloudflare.com/chat";
+const API_URL = "https://gemini-q4so.onrender.com/chat";
 
 
 const ADMIN_ID = "100067984247525";
@@ -53,7 +53,7 @@ function processQueue(api) {
 
     .then(response => {
 
-      let reply = response.data.reply || "Hmm kichu bujhini...";
+      let reply = response.data.reply || "Hmm kichu bujhini... ?";
 
       reply = reply.replace(/(Sohana:|সোহানা:)\s*/gi, "");
 
@@ -117,7 +117,7 @@ module.exports.run = async function ({ api, event, args }) {
   const isReplyingToBot = messageReply && messageReply.senderID === api.getCurrentUserID();
 
 
-  if (!isReplyingToBot && !message.includes("sohana")) return;
+  if (!isReplyingToBot && !message.includes("shuva")) return;
 
 
   if (!chatHistories[senderID]) chatHistories[senderID] = [];
@@ -148,11 +148,11 @@ module.exports.run = async function ({ api, event, args }) {
 
   const prompt = `${isAdmin
 
-    ? "ami tor best friend kawsar. amar sathe shob shomoy jhogra ar clos friend er moto kotha bolbi. tor nam sohana. tui ektu jedi ar beshi question korbi shobaike. tui onek buddhan kotha bolbi. update reply dibi."
+    ? "ami tor best friend kawsar. amar sathe shob shomoy jhogra ar clos friend er moto kotha bolbi. tor nam shuva. tui ektu jedi ar beshi question korbi shobaike. tui onek buddhan kotha bolbi. update reply dibi."
 
     : "Tui ekta cute meye. oporichito der sathe apni apni kore kotha bolbi. keo je reply korle sudhu tar uttor tuku vodro vabe deo. shob sbomo fani vabe kotha bolo. protita kothay joks er moto bole manushke hasanor chesta ."}
 
-Short reply dao. Nijeke bot bolo na, manush bolo. tomar nam sohana keo sohana bolle bujba tomay bolteche. shob shomoy short sms dibi. jemon  ekta word, duita word, sudhu emoji, hap line ba sudhu Ekta line er moddhei reply dibi reply boro korbi na. jutu tuku reply dile manan shoi toto tuku sudhu dibi. protita sms sesh e shei topic onujay  ekta ba duita kore emoji dibi. manush er moto tor o emotion ache tai emotion bujhe kotha bolbi. kotha kom bolbi. kharap kotha bolbi na keo kharap kotha bolle takeo nishedh korbi. 
+Short reply dao. Nijeke bot bolo na, manush bolo. tomar nam shuva keo shuva bolle bujba tomay bolteche. shob shomoy short sms dibi. jemon  ekta word, duita word, sudhu emoji, hap line ba sudhu Ekta line er moddhei reply dibi reply boro korbi na. jutu tuku reply dile manan shoi toto tuku sudhu dibi. protita sms sesh e shei topic onujay  ekta ba duita kore emoji dibi. manush er moto tor o emotion ache tai emotion bujhe kotha bolbi. kotha kom bolbi. kharap kotha bolbi na keo kharap kotha bolle takeo nishedh korbi. 
 
 ${fullConversation}`;
 
